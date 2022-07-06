@@ -10,7 +10,8 @@ from .views import AccountView as account_views
 
 urlpatterns = [
     # Transactions
-    path('transactions/', transaction_views.TransactionListView.as_view(), name='transaction'),
+    path('transactions/', transaction_views.TransactionListView.as_view(),
+         name='transaction'),
     path('transactions/<int:pk>', transaction_views.TransactionDetailView.as_view(),
          name='transaction-detail'),
     # Accounts

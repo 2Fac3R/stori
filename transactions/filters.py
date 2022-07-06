@@ -8,7 +8,7 @@ class MonthFilter(admin.SimpleListFilter):
     title = ("Month")
     parameter_name = ("month")
     months = [
-        'January', 'February', 'March', 'April', 'May', 'June', 
+        'January', 'February', 'March', 'April', 'May', 'June',
         'July', 'August', 'September', 'October', 'November', 'December'
     ]
 

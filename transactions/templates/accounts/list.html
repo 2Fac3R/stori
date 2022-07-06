@@ -1,21 +1,18 @@
-{% comment %} {% extends "base_generic.html" %} {% endcomment %}
+{% comment %} {% extends 'base_generic.html' %} {% endcomment %}
 
 {% block content %}
-<h1>Accounts</h1>
+  <h1>Accounts</h1>
 
-{% if account_list %}
+  {% if account_list %}
     <ul>
-    {% for account in account_list %}
+      {% for account in account_list %}
         <li>
-            {{ account.id }}
-            <a href="{{ account.get_absolute_url }}">
-                {{ account.user }}
-            </a>
+          {{ account.id }}
+          <a href="{{ account.get_absolute_url }}">{{ account.user }}</a>
         </li>
-    {% endfor %}
+      {% endfor %}
     </ul>
-{% else %}
+  {% else %}
     <p>There are no accounts.</p>
-{% endif %}
-
+  {% endif %}
 {% endblock %}

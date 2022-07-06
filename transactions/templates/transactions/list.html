@@ -1,22 +1,19 @@
-{% comment %} {% extends "base_generic.html" %} {% endcomment %}
+{% comment %} {% extends 'base_generic.html' %} {% endcomment %}
 
 {% block content %}
-<h1>Transaction List</h1>
+  <h1>Transaction List</h1>
 
-{% if transaction_list %}
+  {% if transaction_list %}
     <ul>
-    {% for transaction in transaction_list %}
+      {% for transaction in transaction_list %}
         <li>
-            {{ transaction.account }}
-            <a href="{{ transaction.get_absolute_url }}">
-                {{ transaction.transaction }}
-            </a> 
-            ({{ transaction.date }})
+          {{ transaction.account }}
+          <a href="{{ transaction.get_absolute_url }}">{{ transaction.transaction }}</a>
+          ({{ transaction.date }})
         </li>
-    {% endfor %}
+      {% endfor %}
     </ul>
-{% else %}
+  {% else %}
     <p>There are no transactions.</p>
-{% endif %}
-
+  {% endif %}
 {% endblock %}

@@ -18,8 +18,8 @@ from .forms import CsvImportForm
 @admin.register(Account)
 class AccountAdmin(admin.ModelAdmin):
     list_display = ('id', 'user')
-    
-        
+
+
 @admin.register(Transaction)
 class TransactionAdmin(admin.ModelAdmin):
     list_display = ('id', 'date', 'transaction', 'account')
@@ -27,17 +27,17 @@ class TransactionAdmin(admin.ModelAdmin):
 
     def get_urls(self):
         urls = super().get_urls()
-        new_urls = [path('upload-csv/', self.upload_csv),]
+        new_urls = [path('upload-csv/', self.upload_csv), ]
         return new_urls + urls
 
     def upload_csv(self, request):
         if request.method == "POST":
             csv_file = request.FILES["csv_upload"]
-            
+
             if not csv_file.name.endswith('.csv'):
                 messages.warning(request, 'The wrong file type was uploaded')
                 return HttpResponseRedirect(request.path_info)
-            
+
             file_data = csv_file.read().decode("utf-8")
             csv_data = file_data.split("\n")
             current_account = Account.objects.get(user=request.user)
@@ -46,11 +46,11 @@ class TransactionAdmin(admin.ModelAdmin):
                 try:
                     fields = row.split(",")
                     created = Transaction.objects.update_or_create(
-                        id = fields[0],
-                        defaults = { 
-                            'date' : datetime.datetime.strptime(fields[1], "%m/%d").date(),
-                            'transaction' : fields[2],
-                            'account' : current_account
+                        id=fields[0],
+                        defaults={
+                            'date': datetime.datetime.strptime(fields[1], "%m/%d").date(),
+                            'transaction': fields[2],
+                            'account': current_account
                         }
                     )
                 except IndexError:

@@ -42,7 +42,7 @@ DJANGO_APPS = [
 THIRD_PARTY_APPS = []
 
 LOCAL_APPS = [
-    'transactions.apps.TransactionsConfig', # transactions/apps.py
+    'transactions.apps.TransactionsConfig',  # transactions/apps.py
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
