@@ -10,10 +10,10 @@ from ..models.Account import Account
 class AccountListView(generic.ListView):
     model = Account
     ordering = ['id']
-    template_name = 'accounts/account_list.html'
+    template_name = 'accounts/list.html'
     
 
 class AccountDetailView(generic.DetailView):
     model = Account
-    template_name = 'accounts/account_detail.html'
+    template_name = 'accounts/detail.html'
     

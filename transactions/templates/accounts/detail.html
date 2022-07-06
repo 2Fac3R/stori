@@ -1,0 +1,24 @@
+{% comment %} {% extends "base_generic.html" %} {% endcomment %}
+
+{% block content %}
+<h1>Account: {{ account.user }} (ID: {{ account.id }})</h1>
+<h2>Transactions:</h2>
+
+{% for transaction in account.transaction_set.all|dictsort:"date" %}
+    <p><strong>Date:</strong> {{ transaction.date }}</p> 
+    <p><strong>Transaction:</strong> {{ transaction.transaction }}</p>  
+    <hr>
+{% endfor %}
+
+{{months}}
+<p> Total balance is: {{ total_balance|stringformat:".2f" }}</p>
+<p> Credit operations: {{ credit_operations }}
+<p> Debit operations: {{ debit_operations }}
+<p> Average credit amount {{ average_credit }}</p>
+<p> Average debit amount {{ average_debit }} </p>
+<p> Unique months: {{ unique_months }} </p>
+<p> Number_of_months {{ number_of_months }} </p>
+
+
+{% endblock %}
+
