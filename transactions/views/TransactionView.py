@@ -4,7 +4,7 @@
 from django.views import generic
 
 # App
-from ..models.Transaction import Transaction
+from ..models import Transaction
 
 
 class TransactionListView(generic.ListView):

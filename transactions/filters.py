@@ -3,6 +3,7 @@
 # Django
 from django.contrib import admin
 
+
 class MonthFilter(admin.SimpleListFilter):
     title = ("Month")
     parameter_name = ("month")
