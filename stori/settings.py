@@ -125,7 +125,22 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# Default date formats
+# https://docs.djangoproject.com/en/4.0/ref/settings/#date-format
+# https://docs.djangoproject.com/en/4.0/ref/settings/#date-input-formats
+
+USE_L10N = False
+
+DATE_INPUT_FORMATS = ['%m/%d']
+
+DATETIME_INPUT_FORMATS = ['%m/%d']
+
+DATE_FORMAT = 'm/d'
+DATETIME_FORMAT = 'm/d'
