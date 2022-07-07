@@ -10,6 +10,7 @@ from ...models import Transaction, Account
 
 
 class TransactionModelTest(TestCase):
+    
     @classmethod
     def setUp(self):
         self.user = User.objects.create_user(username="test", password="test")

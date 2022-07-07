@@ -40,7 +40,8 @@ class TransactionListViewTest(TestCase):
         self.account = Account.objects.create(id=1, user=self.user)
         self.transaction = Transaction.objects.create(
             id=1, date=timezone.now(), transaction=float(random.uniform(-1000, 1000)), account=self.account)
-        response = self.client.get(reverse('transaction-detail', args=(self.transaction.pk,)))
+        response = self.client.get(
+            reverse('transaction-detail', args=(self.transaction.pk,)))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'transactions/detail.html')
 

@@ -9,6 +9,7 @@ from ...models import Account
 
 
 class AccountModelTest(TestCase):
+    
     @classmethod
     def setUp(self):
         self.user = User.objects.create_user(username="test", password="test")
