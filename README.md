@@ -13,7 +13,7 @@ git clone https://github.com/2Fac3R/stori.git
 Create and start your virtual environment [venv](https://docs.python.org/3/library/venv.html)
 
 ```sh
-python3 -m venv .env
+python3 -m venv .venv
 source .env/bin/activate
 ```
 
@@ -36,6 +36,14 @@ DATABASES = {
         'PORT': '5432',
     }
 }
+```
+
+Configure email settings with your credentials, rename *.env.example* to *.env*
+
+```
+EMAIL_HOST=<host>
+EMAIL_HOST_USER=<your-username>
+EMAIL_HOST_PASSWORD=<your-password>
 ```
 
 Make migrations and migrate
@@ -135,8 +143,8 @@ python3 manage.py test transactions.tests.views.test_account
 ```
 
 ## TODO:
-* Email feature
-* Add tests for uploader and email feature
+* Improve reused code in email feature
+* Add tests for uploader and email features
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
