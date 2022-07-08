@@ -1,0 +1,16 @@
+{% comment %} {% extends 'base_generic.html' %} {% endcomment %}
+
+{% block content %}
+  <h1>Account: {{ account.user }} (ID: {{ account.id }})</h1>
+
+  <p>Total balance is: {{ total_balance|stringformat:'.2f' }}</p>
+  <p>Average credit amount: {{ average_credit|stringformat:'.2f' }}</p>
+  <p>Average debit amount: {{ average_debit|stringformat:'.2f' }}</p>
+
+  {% for number in number_transactions_each_month %}
+    {% if number.1 > 0 %}
+      <p>Number of transactions in {{ number.0.1 }}: {{ number.1 }}</p>
+    {% endif %}
+  {% endfor %}
+
+{% endblock %}
