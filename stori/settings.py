@@ -11,6 +11,10 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+import environ
+
+env = environ.Env()
+environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -145,3 +149,19 @@ DATETIME_INPUT_FORMATS = ['%m/%d']
 
 DATE_FORMAT = 'm/d'
 DATETIME_FORMAT = 'm/d'
+
+# Email
+# https://docs.djangoproject.com/en/4.0/topics/email/
+# https://docs.djangoproject.com/en/4.0/topics/email/#send-mail
+# https://docs.djangoproject.com/en/4.0/topics/email/#email-backends
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_HOST = env('EMAIL_HOST')
+
+EMAIL_PORT = 587
+
+EMAIL_USE_TLS = True
+
+EMAIL_HOST_USER = env('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
