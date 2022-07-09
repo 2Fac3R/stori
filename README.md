@@ -14,7 +14,7 @@ Create and start your virtual environment [venv](https://docs.python.org/3/libra
 
 ```sh
 python3 -m venv .venv
-source .env/bin/activate
+source .venv/bin/activate
 ```
 
 Install requirements. Use the package manager [pip](https://pip.pypa.io/en/stable/)
