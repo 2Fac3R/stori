@@ -114,7 +114,7 @@ Upload csv transactions file (*ex. transactions.csv*):
 
     http://127.0.0.1:8000/admin/transactions/transaction/upload-csv/
 
-It handles the structure: **id,date,transaction** (see the following example). Date format **%m/d%**.
+It handles the structure: **id,date,transaction** (see the following example). Date format **%m/%d**.
 
     1,7/2,-12.22
     2,7/3,+22.22
